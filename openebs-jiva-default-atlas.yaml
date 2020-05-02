@@ -1,0 +1,32 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    cas.openebs.io/config: |
+      - name: ReplicaCount
+        value: "1"
+      - name: StoragePool
+        value: default
+      #- name: TargetResourceLimits
+      #  value: |-
+      #      memory: 1Gi
+      #      cpu: 100m
+      #- name: AuxResourceLimits
+      #  value: |-
+      #      memory: 0.5Gi
+      #      cpu: 50m
+      #- name: ReplicaResourceLimits
+      #  value: |-
+      #      memory: 2Gi
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"storage.k8s.io/v1","kind":"StorageClass","metadata":{"annotations":{"cas.openebs.io/config":"- name: ReplicaCount\n  value: \"1\"\n- name: StoragePool\n  value: default\n#- name: TargetResourceLimits\n#  value: |-\n#      memory: 1Gi\n#      cpu: 100m\n#- name: AuxResourceLimits\n#  value: |-\n#      memory: 0.5Gi\n#      cpu: 50m\n#- name: ReplicaResourceLimits\n#  value: |-\n#      memory: 2Gi\n","openebs.io/cas-type":"jiva"},"creationTimestamp":"2019-08-25T23:56:00Z","name":"openebs-jiva-default-atlas"},"provisioner":"openebs.io/provisioner-iscsi","reclaimPolicy":"Delete","volumeBindingMode":"Immediate"}
+    openebs.io/cas-type: jiva
+  creationTimestamp: "2019-08-26T07:02:35Z"
+  name: openebs-jiva-default-atlas
+  resourceVersion: "101510"
+  selfLink: /apis/storage.k8s.io/v1/storageclasses/openebs-jiva-default-atlas
+  uid: 7b5f23bb-c7cf-11e9-bed6-000d3a1a1e89
+provisioner: openebs.io/provisioner-iscsi
+reclaimPolicy: Delete
+volumeBindingMode: Immediate
+
