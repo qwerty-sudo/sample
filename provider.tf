@@ -1,4 +1,4 @@
 provider "google" {
-credentials = "${file("credentials.json")}"
+credentials = "${file("/home/naveen_gprec96/credentials.json")}"
 region = "us-central1"
 }
